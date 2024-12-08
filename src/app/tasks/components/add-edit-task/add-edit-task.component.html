@@ -1,0 +1,58 @@
+<div class="task-form-container">
+    <h2>{{ taskId ? 'Edit Task' : 'Create a New Task' }}</h2>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <!-- Task Name -->
+      <label for="taskName">Task Name</label>
+      <input id="taskName" type="text" formControlName="name" placeholder="Enter task name" />
+      <div class="error" *ngIf="taskForm.get('name')?.hasError('required') && (taskForm.get('name')?.touched || subbed)">
+        Task name is required.
+      </div>
+      <div class="error" *ngIf="taskForm.get('name')?.hasError('maxlength') && (taskForm.get('name')?.touched || subbed)">
+        Task name cannot exceed 50 characters.
+      </div>
+  
+      <!-- Description -->
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" placeholder="Enter task description"></textarea>
+      <div class="error" *ngIf="taskForm.get('description')?.hasError('required') && (taskForm.get('description')?.touched || subbed)">
+        Description is required.
+      </div>
+      <div class="error" *ngIf="taskForm.get('description')?.hasError('maxlength') && (taskForm.get('description')?.touched || subbed)">
+        Description cannot exceed 200 characters.
+      </div>
+  
+      <!-- Priority -->
+      <label for="priority">Priority</label>
+      <select id="priority" formControlName="priority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+  
+      <!-- Status -->
+      <label for="status">Status</label>
+      <select id="status" formControlName="status">
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+  
+      <!-- Assigned To -->
+      <label for="assignedTo">Assigned To</label>
+      <select id="assignedTo" formControlName="assignedTo">
+        <option value="" disabled>Select a user</option>
+        <option *ngFor="let user of dummyUsers" [value]="user">{{ user }}</option>
+      </select>
+  
+      <!-- Due Date -->
+      <label for="dueDate">Due Date</label>
+      <input id="dueDate" type="date" formControlName="dueDate" [min]="today" />
+  
+      <!-- Buttons -->
+      <div class="button-group">
+        <button type="submit">{{ taskId ? 'Update' : 'Create' }} Task</button>
+        <button type="button" mat-stroked-button (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

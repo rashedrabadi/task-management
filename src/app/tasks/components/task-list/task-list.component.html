@@ -1,0 +1,22 @@
+<div class="column" cdkDropList [cdkDropListData]="tasks" (cdkDropListDropped)="onDrop($event)">
+    <h3>{{title}}</h3>
+    <div *ngIf="tasks && tasks.length > 0; else noTasks" class="card-container" >
+        <div *ngFor="let task of tasks" cdkDrag [cdkDragData]="task" (click)="openTaskDetails(task)" >
+            <div class="task-card" [class.pending]="task.status=='Pending'&&!fromAll" [class.completed]="task.status=='Completed'&&!fromAll"
+                [class.inProgress]="task.status=='In Progress'&&!fromAll">
+                <h3>{{ task.name }}</h3>
+                <p><strong>Due Date:</strong> {{ task.dueDate | date:'shortDate' }}</p>
+                <p><strong>Priority:</strong> {{ task.priority }}</p>
+                <p><strong>Status:</strong> {{ task.status }}</p>
+                <p><strong>Assigned to:</strong> {{ task.assignedTo }}</p>
+            </div>
+        </div>
+
+    </div>
+
+    <ng-template #noTasks>
+        <p>No tasks available.</p>
+    </ng-template>
+
+
+</div>

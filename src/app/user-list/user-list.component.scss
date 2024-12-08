@@ -1,0 +1,67 @@
+.user-list-container {
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    width: 400px;
+    
+    h1 {
+      margin-bottom: 20px;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+  
+      th, td {
+    
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+      th{
+        background-color: #3f51b5;
+        color: white;
+      }
+    
+    }
+  
+    .delete-button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+  
+      &:hover {
+        background-color: #c0392b;
+      }
+    }
+  
+    .add-user-form {
+      display: flex;
+      align-items: center;
+  
+      .input-field {
+        padding: 10px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        flex: 1;
+      }
+  
+      .add-button {
+        background-color: #3f51b5;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+  
+        &:hover {
+          background-color: #2b3677;
+        }
+      }
+    }
+  }
+  

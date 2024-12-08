@@ -1,0 +1,16 @@
+
+<div class="main">
+    <button class="align" mat-flat-button color="primary" (click)="navigateToAddTask()">Create Task</button>
+
+  
+ 
+    <div class="dashboard-container" >
+        <app-task-list 
+          [tasks]=" this.tasks" 
+          [fromAll]="true"
+          title="All Tasks" >
+        </app-task-list>
+      </div>
+</div>
+
+  

@@ -1,0 +1,33 @@
+<div class="user-list-container">
+    <h1>User List</h1>
+  
+    <!-- Table to display users -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user }}</td>
+          <td>
+            <button (click)="deleteUser(user)" class="delete-button">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Add User Form -->
+    <div class="add-user-form">
+      <input
+        type="text"
+        [(ngModel)]="newUserName"
+        placeholder="Enter new user name"
+        class="input-field"
+      />
+      <button (click)="addUser()" class="add-button">Add User</button>
+    </div>
+  </div>
+  

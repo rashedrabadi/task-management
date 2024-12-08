@@ -1,0 +1,15 @@
+<!-- header.component.html -->
+<mat-toolbar color="primary">
+    <span>TMS</span>
+    
+    <button mat-button [routerLink]="['/']">Main Dashboard</button>
+    <button mat-button [routerLink]="['/tasks']">All Tasks</button>
+    <button mat-button [routerLink]="['/user-list']">User List</button>
+    <span class="spacer"></span>
+    <span>Theme</span>
+    <label class="switch">
+      <input type="checkbox" (change)="toggleDarkMode()" />
+      <span class="slider"></span>
+    </label>
+  </mat-toolbar>
+  

@@ -1,0 +1,38 @@
+.mat-dialog-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .task-details {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .task-info {
+    display: flex;
+    gap: 16px;
+    margin: 8px 0;
+  }
+  
+  mat-chip {
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  mat-dialog-actions {
+    margin-top: 16px;
+  }
+  
+  button[mat-button] {
+    width: 100%;
+    color: white;
+    background-color: #3f51b5;
+  }
+  .btn {
+    margin-top: 5px;
+    width: 100%;
+  }

@@ -1,0 +1,39 @@
+<div class="task-page">
+    <div class="task-header">
+      <h2>{{ task?.name }}</h2>
+      <div class="task-actions">
+        <button mat-raised-button color="accent" (click)="openEdit()">Edit Task</button>
+        <button mat-stroked-button (click)="leave()">Cancel</button>
+      </div>
+    </div>
+  
+    <div class="task-details">
+      <div class="task-description">
+        <p><strong>Description:</strong></p>
+        <div class="scrollable-description">{{ task?.description }}</div>
+      </div>
+  
+      <div class="task-info">
+        <div class="info-item">
+          <p><strong>Priority:</strong></p>
+          <span>{{ task?.priority }}</span>
+        </div>
+  
+        <div class="info-item">
+          <p><strong>Status:</strong></p>
+          <span>{{ task?.status }}</span>
+        </div>
+  
+        <div class="info-item">
+          <p><strong>Assigned To:</strong></p>
+          <span>{{ task?.assignedTo }}</span>
+        </div>
+  
+        <div class="info-item">
+          <p><strong>Due Date:</strong></p>
+          <span>{{ task?.dueDate | date: 'longDate' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  

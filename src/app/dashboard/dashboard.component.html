@@ -1,0 +1,28 @@
+
+<div class="main">
+    <button class="align" mat-flat-button color="primary" (click)="openTaskFormDialog()">Create Task</button>
+
+  
+ 
+    <div class="dashboard-container" cdkDropListGroup>
+        <app-task-list 
+          [tasks]="getTasksByStatus('Pending')" 
+          title="Pending" 
+          (taskDropped)="onTaskDropped($event)">
+        </app-task-list>
+        
+        <app-task-list 
+          [tasks]="getTasksByStatus('In Progress')" 
+          title="In Progress" 
+          (taskDropped)="onTaskDropped($event)">
+        </app-task-list>
+        
+        <app-task-list 
+          [tasks]="getTasksByStatus('Completed')" 
+          title="Completed" 
+          (taskDropped)="onTaskDropped($event)">
+        </app-task-list>
+      </div>
+</div>
+
+  
